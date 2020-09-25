@@ -8,6 +8,7 @@ pipeline {
         	 steps ('Compile stage'){
  	         echo 'building compile' 
  	        }
+ 	        }
  	    stage{
  	        
  	        steps ('Testing stage'){
@@ -26,5 +27,4 @@ pipeline {
             
         }
 
-    }
 }

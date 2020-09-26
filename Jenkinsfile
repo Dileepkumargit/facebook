@@ -3,24 +3,25 @@ pipeline {
     
     stages {
         
-        stage{
-        	 
-        	 steps ('Compile stage'){
- 	         echo 'building compile' 
+        stage('Compile stage')
+            
+        	 steps {
+        	 bat 'maven clean install'
+ 	        	clean 
+ 	        
  	        }
- 	        }
- 	    stage{
+ 	    stage('Testing stage')
  	        
  	        steps ('Testing stage'){
- 	            echo 'Testing stage'
+ 	            bat 'Testing stage'
  	              }
 
- 	    }
-		 stage{
+ 	    
+		 stage
  	        
  	        steps ('Deployement stage'){
- 	           echo 'Deployment stage'
- 	              }
+ 	           bat 'Deployment stage'
+ 	              
 
  	    }
      		       

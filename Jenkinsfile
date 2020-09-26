@@ -6,14 +6,14 @@ pipeline {
         stage('Compile stage')
             
         	 steps {
-        	 bat 'maven clean install'
+        	 sh 'clean'
  	        	clean 
  	        
  	        }
  	    stage('Testing stage')
  	        
  	        steps ('Testing stage'){
- 	            bat 'Testing stage'
+ 	            sh 'clean test'
  	              }
 
  	    

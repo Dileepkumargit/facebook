@@ -8,8 +8,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 			
-			features = {"C:\\Users\\abc\\eclipse-workspace\\Maven\\featurefiles\\amazon.feature"},
-			glue    =  {"stepdef"})
+			features = {"featurefiles/amazon.feature"},
+			glue    =  {"stepdef"},
+			plugin = {"json:target/cucumber.json"})
 
 public class Testrunner {
 

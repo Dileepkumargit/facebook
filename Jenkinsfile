@@ -4,7 +4,15 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                echo 'compile stage'
+                bat 'mvn -version'
+              
+                    bat 'mvn clean install'
+               
+              
+                    cucumber buildStatus: "UNSTABLE",
+                    fileIncludePattern: "cucumber.json",
+                    jsonReportDirectory: 'target'
+               
             }
         }
         stage('Test') {
